@@ -60,7 +60,7 @@ args+=("-projectPath=$project_prj_file")
 
 cd $workspace_dir
 
-xvfb-run -s "-screen 0 $DISPLAY_CONFIGURATION" "${args[@]}"
+xvfb-run -s "-screen 0 $DISPLAY_CONFIGURATION" /katalon/katalon/scripts/katalon-stream.sh "${args[@]}" 
 ret_code=$?
 
 #clean up
