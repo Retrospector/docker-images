@@ -50,9 +50,7 @@ jobs:
       run: |
         docker tag katalon-katalon $ECR_REGISTRY/$ECR_REPOSITORY:$ksversion
         ./build/push_aws.sh $KS_VERSION
-        docker tag katalon-katalon $ECR_REGISTRY/$ECR_REPOSITORY:latest
         docker tag katalon-katalon 346625874447.dkr.ecr.us-east-1.amazonaws.com/katalonstudio:latest
-
         ./build/push_aws.sh latest
     - name: Logout of Amazon ECR
       if: always()
