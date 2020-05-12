@@ -26,7 +26,7 @@ jobs:
         chmod u+x ./build/*.sh
         ./build/clean.sh $KS_VERSION
         ./build/build.sh $KS_VERSION
-        ./build/tag.sh $KS_VERSION 
+        ./build/tag_aws.sh $KS_VERSION 
     - name: Test
       run: | 
         chmod u+x ./test/project/*.sh
@@ -50,8 +50,8 @@ jobs:
         ECR_REPOSITORY: ${{ secrets.AWS_ECR_REPOSITORY }}
         IMAGE_TAG: $KS_VERSION
       run: |
-        ./build/tag.sh $KS_VERSION
-        ./build/push.sh $KS_VERSION
+        ./build/tag_aws.sh $KS_VERSION
+        ./build/push_aws.sh $KS_VERSION
         ./build/tag_aws.sh latest
         ./build/push_aws.sh latest
     - name: Logout of Amazon ECR
