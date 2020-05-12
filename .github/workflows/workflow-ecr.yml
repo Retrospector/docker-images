@@ -26,7 +26,7 @@ jobs:
         chmod u+x ./build/*.sh
         ./build/clean.sh $KS_VERSION
         ./build/build.sh $KS_VERSION
-        docker tag katalon-katalon $ECR_REGISTRY/$ECR_REPOSITORY:$KS_VERSION 
+        docker tag katalon-katalon 346625874447.dkr.ecr.us-east-1.amazonaws.com/katalonstudio:$KS_VERSION
     - name: Test
       run: | 
         chmod u+x ./test/project/*.sh
