@@ -52,8 +52,8 @@ jobs:
       run: |
         ./build/tag.sh $KS_VERSION
         ./build/push.sh $KS_VERSION
-        ./build/tag.sh latest
-        ./build/push.sh latest
+        ./build/tag_aws.sh latest
+        ./build/push_aws.sh latest
     - name: Logout of Amazon ECR
       if: always()
       run: docker logout ${{ steps.login-ecr.outputs.registry }}
