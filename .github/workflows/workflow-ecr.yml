@@ -48,7 +48,7 @@ jobs:
       env:
         IMAGE_TAG: $KS_VERSION
       run: |
-        docker tag katalon-katalon 346625874447.dkr.ecr.us-east-1.amazonaws.com/katalonstudio:$ksversion
+        docker tag katalon-katalon 346625874447.dkr.ecr.us-east-1.amazonaws.com/katalonstudio:$KS_VERSION
         ./build/push_aws.sh $KS_VERSION
         docker tag katalon-katalon 346625874447.dkr.ecr.us-east-1.amazonaws.com/katalonstudio:latest
         ./build/push_aws.sh latest
