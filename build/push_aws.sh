@@ -4,4 +4,4 @@ set -xe
 
 ksversion=$1
 
-docker push $ECR_REGISTRY/$ECR_REPOSITORY:$ksversion
+docker push 346625874447.dkr.ecr.us-east-1.amazonaws.com/katalonstudio:$ksversion
