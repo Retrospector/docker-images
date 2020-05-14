@@ -23,6 +23,9 @@ RUN apt -y install wget
 RUN apt -y install unzip
 RUN apt -y install curl
 RUN apt -y install gosu
+RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+RUN python3 get-pip.py --user
+RUN pip3 install awscli --upgrade --user
 
 RUN echo "Install JRE"
 RUN apt -y install default-jre
@@ -139,6 +142,6 @@ RUN cat $KATALON_VERSION_FILE
 
 WORKDIR /
 
-COPY ./src/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY ./src/entrypoint_aws.sh /usr/local/bin/entrypoint.sh
 RUN chmod a+x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
