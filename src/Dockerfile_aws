@@ -23,7 +23,7 @@ RUN apt -y install wget
 RUN apt -y install unzip
 RUN apt -y install curl
 RUN apt -y install gosu
-RUN apt-get install python3-setuptools
+RUN apt -y install python3-setuptools
 RUN easy_install3 pip
 RUN pip3 install awscli --upgrade --user
 
